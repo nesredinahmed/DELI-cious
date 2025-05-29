@@ -1,4 +1,91 @@
-package PACKAGE_NAME;
+import com.delicous.model.Order;
+import com.delicous.view.*;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+/**
+ * The main application class for DELI-cious CLI.
+ * Manages screen navigation and the current order state.
+ */
 public class Application {
+    private Scanner scanner;
+    private Map<String, Screen> screens;
+    private Order currentOrder;
+    private String currentScreenName;
+
+    public Application() {
+        this.scanner = new Scanner(System.in);
+        this.screens = new HashMap<>();
+        this.currentOrder = new Order(); // Initialize a new order for the session
+        initializeScreens();
+        this.currentScreenName = "home"; // Start at the home screen
+    }
+
+    /**
+     * Initializes all application screens and maps them by name.
+     */
+    private void initializeScreens() {
+        screens.put("home", new HomeScreen());
+        screens.put("order", new OrderScreen(currentOrder)); // Pass currentOrder to OrderScreen
+        screens.put("add_sandwich", new AddSandwichScreen(currentOrder));
+        screens.put("add_drink", new AddDrinkScreen(currentOrder));
+        screens.put("add_chips", new AddChipsScreen(currentOrder));
+        screens.put("checkout", new CheckoutScreen(currentOrder));
+    }
+
+    /**
+     * The main application loop. Displays the current screen and handles user input.
+     */
+    public void run() {
+        System.out.println("Welcome to DELI-cious!");
+
+        while (true) {
+            Screen currentScreen = screens.get(currentScreenName);
+            if (currentScreen == null) {
+                System.err.println("Error: Screen not found: " + currentScreenName);
+                currentScreenName = "home"; // Fallback to home
+                continue;
+            }
+
+            currentScreen.display();
+            String nextScreenCommand = currentScreen.handleInput(scanner);
+
+            // Handle special commands
+            if ("exit".equals(nextScreenCommand)) {
+                System.out.println("Thank you for using DELI-cious! Goodbye!");
+                break; // Exit the loop and terminate application
+            } else if ("cancel_order".equals(nextScreenCommand)) {
+                // For OrderScreen's cancel, just reset the order and go home
+                this.currentOrder = new Order(); // Create a new empty order
+                // Re-initialize screens that depend on currentOrder
+                screens.put("order", new OrderScreen(currentOrder));
+                screens.put("add_sandwich", new AddSandwichScreen(currentOrder));
+                screens.put("add_drink", new AddDrinkScreen(currentOrder));
+                screens.put("add_chips", new AddChipsScreen(currentOrder));
+                screens.put("checkout", new CheckoutScreen(currentOrder));
+                currentScreenName = "home";
+            } else if ("new_order_and_home".equals(nextScreenCommand) || "cancel_order_and_home".equals(nextScreenCommand)) {
+                // For CheckoutScreen's confirm/cancel, reset order and go home
+                this.currentOrder = new Order(); // Create a new empty order
+                // Re-initialize screens that depend on currentOrder
+                screens.put("order", new OrderScreen(currentOrder));
+                screens.put("add_sandwich", new AddSandwichScreen(currentOrder));
+                screens.put("add_drink", new AddDrinkScreen(currentOrder));
+                screens.put("add_chips", new AddChipsScreen(currentOrder));
+                screens.put("checkout", new CheckoutScreen(currentOrder));
+                currentScreenName = "home";
+            } else {
+                // Navigate to the next screen
+                currentScreenName = nextScreenCommand;
+            }
+        }
+        scanner.close(); // Close the scanner when the application exits
+    }
+
+    public static void main(String[] args) {
+        Application app = new Application();
+        app.run();
+    }
 }
