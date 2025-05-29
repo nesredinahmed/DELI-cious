@@ -1,5 +1,6 @@
 package com.delicous.view;
 
+import com.delicous.utilities.AnsiColors; // Import AnsiColors
 import java.util.Scanner;
 
 /**
@@ -10,10 +11,10 @@ public class HomeScreen implements Screen {
 
     @Override
     public void display() {
-        System.out.println("\n--- DELI-cious Home Screen ---");
-        System.out.println("1) New Order");
-        System.out.println("0) Exit");
-        System.out.print("Enter your choice: ");
+        System.out.println(AnsiColors.BOLD + AnsiColors.GREEN + "\n--- DELI-cious Home Screen ---" + AnsiColors.RESET);
+        System.out.println(AnsiColors.YELLOW + "1) New Order" + AnsiColors.RESET);
+        System.out.println(AnsiColors.YELLOW + "0) Exit" + AnsiColors.RESET);
+        System.out.print(AnsiColors.BRIGHT_BLUE + "Enter your choice: " + AnsiColors.RESET);
     }
 
     @Override
@@ -22,7 +23,7 @@ public class HomeScreen implements Screen {
         try {
             choice = Integer.parseInt(scanner.nextLine());
         } catch (NumberFormatException e) {
-            System.out.println("Invalid input. Please enter a number.");
+            System.out.println(AnsiColors.RED + "Invalid input. Please enter a number." + AnsiColors.RESET);
             return "home"; // Stay on home screen
         }
 
@@ -32,7 +33,7 @@ public class HomeScreen implements Screen {
             case 0:
                 return "exit";  // Exit the application
             default:
-                System.out.println("Invalid choice. Please try again.");
+                System.out.println(AnsiColors.RED + "Invalid choice. Please try again." + AnsiColors.RESET);
                 return "home"; // Stay on home screen
         }
     }

@@ -4,29 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47df988a-a8e3-4936-bb16-b16b5b53ad30" name="Changes" comment="Update">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/delicous/model/Bread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/model/Bread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/delicous/model/Cheese.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/model/Cheese.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/delicous/model/Chips.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/model/Chips.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/delicous/model/Drink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/model/Drink.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/delicous/model/Meat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/model/Meat.java" afterDir="false" />
+    <list default="true" id="47df988a-a8e3-4936-bb16-b16b5b53ad30" name="Changes" comment="Updating for Sides and sauces">
+      <change afterPath="$PROJECT_DIR$/src/com/delicous/utilities/AnsiColors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DELI-cious_G.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DELI-cious.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/delicous/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/model/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/delicous/model/Sandwich.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/model/Sandwich.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/delicous/util/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/utilities/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/delicous/util/PriceList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/utilities/PriceList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/delicous/util/ReceiptLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/utilities/ReceiptLogger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/delicous/view/AddChipsScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/view/AddChipsScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/delicous/view/AddDrinkScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/view/AddDrinkScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/delicous/view/AddSandwichScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/view/AddSandwichScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/delicous/view/CheckoutScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/view/CheckoutScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/delicous/view/HomeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/view/HomeScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/delicous/view/OrderScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/view/OrderScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,7 +50,33 @@
     "git-widget-placeholder": "main"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="DELI-cious" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="DELI-cious" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="Updating for Sides and sauces">
+      <option name="closed" value="true" />
+      <created>1748481805221</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1748481805221</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Updating for Sides and sauces" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updating for Sides and sauces" />
   </component>
 </project>

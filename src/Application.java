@@ -1,4 +1,5 @@
 import com.delicous.model.Order;
+import com.delicous.utilities.AnsiColors; // Import AnsiColors
 import com.delicous.view.*;
 
 import java.util.HashMap;
@@ -39,12 +40,14 @@ public class Application {
      * The main application loop. Displays the current screen and handles user input.
      */
     public void run() {
-        System.out.println("Welcome to DELI-cious!");
+        System.out.println(AnsiColors.BOLD + AnsiColors.CYAN + "\n========================================" + AnsiColors.RESET);
+        System.out.println(AnsiColors.BOLD + AnsiColors.CYAN + "  Welcome to DELI-cious! Order Fresh! " + AnsiColors.RESET);
+        System.out.println(AnsiColors.BOLD + AnsiColors.CYAN + "========================================\n" + AnsiColors.RESET);
 
         while (true) {
             Screen currentScreen = screens.get(currentScreenName);
             if (currentScreen == null) {
-                System.err.println("Error: Screen not found: " + currentScreenName);
+                System.err.println(AnsiColors.RED + "Error: Screen not found: " + currentScreenName + AnsiColors.RESET);
                 currentScreenName = "home"; // Fallback to home
                 continue;
             }
@@ -54,7 +57,9 @@ public class Application {
 
             // Handle special commands
             if ("exit".equals(nextScreenCommand)) {
-                System.out.println("Thank you for using DELI-cious! Goodbye!");
+                System.out.println(AnsiColors.BOLD + AnsiColors.CYAN + "\n=========================================" + AnsiColors.RESET);
+                System.out.println(AnsiColors.BOLD + AnsiColors.CYAN + "  Thank you for using DELI-cious! Goodbye! " + AnsiColors.RESET);
+                System.out.println(AnsiColors.BOLD + AnsiColors.CYAN + "=========================================\n" + AnsiColors.RESET);
                 break; // Exit the loop and terminate application
             } else if ("cancel_order".equals(nextScreenCommand)) {
                 // For OrderScreen's cancel, just reset the order and go home

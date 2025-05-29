@@ -2,8 +2,10 @@ package com.delicous.view;
 
 import com.delicous.model.Chips;
 import com.delicous.model.Order;
-import com.delicous.utilities.Menu; // Import the new Menu class
+import com.delicous.utilities.AnsiColors; // Import AnsiColors
+import com.delicous.utilities.Menu;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -12,8 +14,6 @@ import java.util.Scanner;
  */
 public class AddChipsScreen implements Screen {
     private Order currentOrder;
-    // Removed hardcoded list, now using Menu class
-    // private static final List<String> CHIP_TYPES = Arrays.asList("Original", "Salt & Vinegar", "BBQ", "Cheddar", "Sour Cream & Onion");
 
     public AddChipsScreen(Order currentOrder) {
         this.currentOrder = currentOrder;
@@ -26,15 +26,15 @@ public class AddChipsScreen implements Screen {
 
     @Override
     public String handleInput(Scanner scanner) {
-        System.out.println("\n--- Add Chips ---");
+        System.out.println(AnsiColors.BOLD + AnsiColors.GREEN + "\n--- Add Chips ---" + AnsiColors.RESET);
 
         // 1. Select Chip Type
-        String chipType = selectOption(scanner, "Select chip type:", Menu.getChipTypes());
+        String chipType = selectOption(scanner, AnsiColors.BRIGHT_WHITE + "Select chip type:" + AnsiColors.RESET, Menu.getChipTypes());
         if (chipType == null) return "order"; // User cancelled
 
         Chips chips = new Chips(chipType);
         currentOrder.addItem(chips);
-        System.out.println("Chips added to order: " + chips.getDetails());
+        System.out.println(AnsiColors.GREEN + "Chips added to order: " + chips.getDetails() + AnsiColors.RESET);
         return "order"; // Return to order screen
     }
 
@@ -49,23 +49,23 @@ public class AddChipsScreen implements Screen {
         while (true) {
             System.out.println(prompt);
             for (int i = 0; i < options.size(); i++) {
-                System.out.println((i + 1) + ") " + options.get(i));
+                System.out.println(AnsiColors.YELLOW + (i + 1) + ") " + options.get(i) + AnsiColors.RESET);
             }
-            System.out.println("0) Cancel");
-            System.out.print("Enter choice: ");
+            System.out.println(AnsiColors.RED + "0) Cancel" + AnsiColors.RESET);
+            System.out.print(AnsiColors.BRIGHT_BLUE + "Enter choice: " + AnsiColors.RESET);
             try {
                 int choice = Integer.parseInt(scanner.nextLine());
                 if (choice == 0) {
-                    System.out.println("Operation cancelled.");
+                    System.out.println(AnsiColors.YELLOW + "Operation cancelled." + AnsiColors.RESET);
                     return null;
                 }
                 if (choice > 0 && choice <= options.size()) {
                     return options.get(choice - 1);
                 } else {
-                    System.out.println("Invalid choice. Please try again.");
+                    System.out.println(AnsiColors.RED + "Invalid choice. Please try again." + AnsiColors.RESET);
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Invalid input. Please enter a number.");
+                System.out.println(AnsiColors.RED + "Invalid input. Please enter a number." + AnsiColors.RESET);
             }
         }
     }

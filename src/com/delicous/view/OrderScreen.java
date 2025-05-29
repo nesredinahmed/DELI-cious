@@ -1,6 +1,7 @@
 package com.delicous.view;
 
 import com.delicous.model.Order;
+import com.delicous.utilities.AnsiColors; // Import AnsiColors
 
 import java.util.Scanner;
 
@@ -16,20 +17,16 @@ public class OrderScreen implements Screen {
 
     @Override
     public void display() {
-        System.out.println("\n--- Order Screen ---");
-        System.out.println("Current Order Items:");
-        if (currentOrder.getItems().isEmpty()) {
-            System.out.println("  (No items added yet)");
-        } else {
-            System.out.println(currentOrder.getDetails());
-        }
-        System.out.println("--------------------");
-        System.out.println("1) Add Sandwich");
-        System.out.println("2) Add Drink");
-        System.out.println("3) Add Chips");
-        System.out.println("4) Checkout");
-        System.out.println("0) Cancel Order");
-        System.out.print("Enter your choice: ");
+        System.out.println(AnsiColors.BOLD + AnsiColors.GREEN + "\n--- Order Screen ---" + AnsiColors.RESET);
+        System.out.println(AnsiColors.BRIGHT_WHITE + "Current Order Items:" + AnsiColors.RESET);
+        System.out.println(currentOrder.getDetails()); // Order.getDetails() now includes colors
+        System.out.println(AnsiColors.GREEN + "--------------------" + AnsiColors.RESET);
+        System.out.println(AnsiColors.YELLOW + "1) Add Sandwich" + AnsiColors.RESET);
+        System.out.println(AnsiColors.YELLOW + "2) Add Drink" + AnsiColors.RESET);
+        System.out.println(AnsiColors.YELLOW + "3) Add Chips" + AnsiColors.RESET);
+        System.out.println(AnsiColors.YELLOW + "4) Checkout" + AnsiColors.RESET);
+        System.out.println(AnsiColors.RED + "0) Cancel Order" + AnsiColors.RESET);
+        System.out.print(AnsiColors.BRIGHT_BLUE + "Enter your choice: " + AnsiColors.RESET);
     }
 
     @Override
@@ -38,7 +35,7 @@ public class OrderScreen implements Screen {
         try {
             choice = Integer.parseInt(scanner.nextLine());
         } catch (NumberFormatException e) {
-            System.out.println("Invalid input. Please enter a number.");
+            System.out.println(AnsiColors.RED + "Invalid input. Please enter a number." + AnsiColors.RESET);
             return "order"; // Stay on order screen
         }
 
@@ -51,15 +48,15 @@ public class OrderScreen implements Screen {
                 return "add_chips";
             case 4:
                 if (currentOrder.getItems().isEmpty()) {
-                    System.out.println("Cannot checkout an empty order. Please add items first.");
+                    System.out.println(AnsiColors.RED + "Cannot checkout an empty order. Please add items first." + AnsiColors.RESET);
                     return "order";
                 }
                 return "checkout";
             case 0:
-                System.out.println("Order cancelled. Returning to Home Screen.");
+                System.out.println(AnsiColors.YELLOW + "Order cancelled. Returning to Home Screen." + AnsiColors.RESET);
                 return "cancel_order"; // Special command to cancel and go home
             default:
-                System.out.println("Invalid choice. Please try again.");
+                System.out.println(AnsiColors.RED + "Invalid choice. Please try again." + AnsiColors.RESET);
                 return "order"; // Stay on order screen
         }
     }

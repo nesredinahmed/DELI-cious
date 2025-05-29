@@ -1,7 +1,8 @@
 package com.delicous.view;
 
 import com.delicous.model.*;
-import com.delicous.utilities.Menu; // Import the new Menu class
+import com.delicous.utilities.AnsiColors; // Import AnsiColors
+import com.delicous.utilities.Menu;
 
 import java.util.Arrays;
 import java.util.List;
@@ -24,14 +25,14 @@ public class AddSandwichScreen implements Screen {
 
     @Override
     public String handleInput(Scanner scanner) {
-        System.out.println("\n--- Add Sandwich ---");
+        System.out.println(AnsiColors.BOLD + AnsiColors.GREEN + "\n--- Add Sandwich ---" + AnsiColors.RESET);
 
         // 1. Select Sandwich Size
-        String size = selectOption(scanner, "Select sandwich size:", Menu.getSandwichSizes());
+        String size = selectOption(scanner, AnsiColors.BRIGHT_WHITE + "Select sandwich size:" + AnsiColors.RESET, Menu.getSandwichSizes());
         if (size == null) return "order"; // User cancelled
 
         // 2. Select Bread Type
-        String breadType = selectOption(scanner, "Select your bread:", Menu.getBreadTypes());
+        String breadType = selectOption(scanner, AnsiColors.BRIGHT_WHITE + "Select your bread:" + AnsiColors.RESET, Menu.getBreadTypes());
         if (breadType == null) return "order"; // User cancelled
         Bread bread = new Bread(breadType);
 
@@ -53,12 +54,12 @@ public class AddSandwichScreen implements Screen {
         addRegularToppings(scanner, sandwich, Menu.getSideToppings(), "Sides");
 
         // 8. Toasted?
-        System.out.print("Would you like the sandwich toasted? (yes/no): ");
+        System.out.print(AnsiColors.BRIGHT_WHITE + "Would you like the sandwich toasted? (yes/no): " + AnsiColors.RESET);
         String toastedInput = scanner.nextLine().trim().toLowerCase();
         sandwich.setToasted(toastedInput.equals("yes"));
 
         currentOrder.addItem(sandwich);
-        System.out.println("Sandwich added to order!");
+        System.out.println(AnsiColors.GREEN + "Sandwich added to order!" + AnsiColors.RESET);
         System.out.println(sandwich.getDetails()); // Show details of the added sandwich
         return "order"; // Return to order screen
     }
@@ -74,23 +75,23 @@ public class AddSandwichScreen implements Screen {
         while (true) {
             System.out.println(prompt);
             for (int i = 0; i < options.size(); i++) {
-                System.out.println((i + 1) + ") " + options.get(i));
+                System.out.println(AnsiColors.YELLOW + (i + 1) + ") " + options.get(i) + AnsiColors.RESET);
             }
-            System.out.println("0) Cancel");
-            System.out.print("Enter choice: ");
+            System.out.println(AnsiColors.RED + "0) Cancel" + AnsiColors.RESET);
+            System.out.print(AnsiColors.BRIGHT_BLUE + "Enter choice: " + AnsiColors.RESET);
             try {
                 int choice = Integer.parseInt(scanner.nextLine());
                 if (choice == 0) {
-                    System.out.println("Operation cancelled.");
+                    System.out.println(AnsiColors.YELLOW + "Operation cancelled." + AnsiColors.RESET);
                     return null;
                 }
                 if (choice > 0 && choice <= options.size()) {
                     return options.get(choice - 1);
                 } else {
-                    System.out.println("Invalid choice. Please try again.");
+                    System.out.println(AnsiColors.RED + "Invalid choice. Please try again." + AnsiColors.RESET);
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Invalid input. Please enter a number.");
+                System.out.println(AnsiColors.RED + "Invalid input. Please enter a number." + AnsiColors.RESET);
             }
         }
     }
@@ -107,13 +108,13 @@ public class AddSandwichScreen implements Screen {
                                                                List<String> availableToppings,
                                                                String toppingCategory, Class<T> toppingClass) {
         while (true) {
-            System.out.println("\n--- Add " + toppingCategory + " ---");
-            System.out.println("Available " + toppingCategory + "s:");
+            System.out.println(AnsiColors.BOLD + AnsiColors.BRIGHT_YELLOW + "\n--- Add " + toppingCategory + " ---" + AnsiColors.RESET);
+            System.out.println(AnsiColors.BRIGHT_WHITE + "Available " + toppingCategory + "s:" + AnsiColors.RESET);
             for (int i = 0; i < availableToppings.size(); i++) {
-                System.out.println((i + 1) + ") " + availableToppings.get(i));
+                System.out.println(AnsiColors.YELLOW + (i + 1) + ") " + availableToppings.get(i) + AnsiColors.RESET);
             }
-            System.out.println("0) Done adding " + toppingCategory);
-            System.out.print("Enter choice: ");
+            System.out.println(AnsiColors.RED + "0) Done adding " + toppingCategory + AnsiColors.RESET);
+            System.out.print(AnsiColors.BRIGHT_BLUE + "Enter choice: " + AnsiColors.RESET);
 
             try {
                 int choice = Integer.parseInt(scanner.nextLine());
@@ -123,7 +124,7 @@ public class AddSandwichScreen implements Screen {
                 if (choice > 0 && choice <= availableToppings.size()) {
                     String selectedToppingName = availableToppings.get(choice - 1);
 
-                    System.out.print("Would you like extra " + selectedToppingName + "? (yes/no): ");
+                    System.out.print(AnsiColors.BRIGHT_WHITE + "Would you like extra " + selectedToppingName + "? (yes/no): " + AnsiColors.RESET);
                     String extraInput = scanner.nextLine().trim().toLowerCase();
                     boolean isExtra = extraInput.equals("yes");
 
@@ -136,14 +137,14 @@ public class AddSandwichScreen implements Screen {
                         throw new IllegalArgumentException("Unsupported topping class: " + toppingClass.getName());
                     }
                     sandwich.addTopping(topping);
-                    System.out.println(topping.toString() + " added.");
+                    System.out.println(AnsiColors.GREEN + topping.toString() + " added." + AnsiColors.RESET);
                 } else {
-                    System.out.println("Invalid choice. Please try again.");
+                    System.out.println(AnsiColors.RED + "Invalid choice. Please try again." + AnsiColors.RESET);
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Invalid input. Please enter a number.");
+                System.out.println(AnsiColors.RED + "Invalid input. Please enter a number." + AnsiColors.RESET);
             } catch (IllegalArgumentException e) {
-                System.err.println("Error creating topping: " + e.getMessage());
+                System.err.println(AnsiColors.RED + "Error creating topping: " + e.getMessage() + AnsiColors.RESET);
             }
         }
     }
@@ -157,13 +158,13 @@ public class AddSandwichScreen implements Screen {
      */
     private void addRegularToppings(Scanner scanner, Sandwich sandwich, List<String> availableItems, String categoryName) {
         while (true) {
-            System.out.println("\n--- Add " + categoryName + " (Included) ---");
-            System.out.println("Available " + categoryName + ":");
+            System.out.println(AnsiColors.BOLD + AnsiColors.BRIGHT_GREEN + "\n--- Add " + categoryName + " (Included) ---" + AnsiColors.RESET);
+            System.out.println(AnsiColors.BRIGHT_WHITE + "Available " + categoryName + ":" + AnsiColors.RESET);
             for (int i = 0; i < availableItems.size(); i++) {
-                System.out.println((i + 1) + ") " + availableItems.get(i));
+                System.out.println(AnsiColors.YELLOW + (i + 1) + ") " + availableItems.get(i) + AnsiColors.RESET);
             }
-            System.out.println("0) Done adding " + categoryName);
-            System.out.print("Enter choice: ");
+            System.out.println(AnsiColors.RED + "0) Done adding " + categoryName + AnsiColors.RESET);
+            System.out.print(AnsiColors.BRIGHT_BLUE + "Enter choice: " + AnsiColors.RESET);
 
             try {
                 int choice = Integer.parseInt(scanner.nextLine());
@@ -174,12 +175,12 @@ public class AddSandwichScreen implements Screen {
                     String selectedItemName = availableItems.get(choice - 1);
                     // Regular toppings don't have extra cost, so 'isExtra' is just for display
                     sandwich.addTopping(new RegularTopping(selectedItemName, false));
-                    System.out.println(selectedItemName + " added.");
+                    System.out.println(AnsiColors.GREEN + selectedItemName + " added." + AnsiColors.RESET);
                 } else {
-                    System.out.println("Invalid choice. Please try again.");
+                    System.out.println(AnsiColors.RED + "Invalid choice. Please try again." + AnsiColors.RESET);
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Invalid input. Please enter a number.");
+                System.out.println(AnsiColors.RED + "Invalid input. Please enter a number." + AnsiColors.RESET);
             }
         }
     }

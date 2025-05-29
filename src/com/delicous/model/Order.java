@@ -1,5 +1,6 @@
 package com.delicous.model;
 
+import com.delicous.utilities.AnsiColors; // Import AnsiColors
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,19 +41,19 @@ public class Order {
     public String getDetails() {
         StringBuilder details = new StringBuilder();
         if (items.isEmpty()) {
-            details.append("Order is empty.\n");
+            details.append(AnsiColors.BRIGHT_BLACK + "  (No items added yet)\n" + AnsiColors.RESET);
             return details.toString();
         }
 
-        details.append("--- Current Order Details ---\n");
+        details.append(AnsiColors.BLUE + "--- Current Order Details ---\n" + AnsiColors.RESET);
         for (int i = 0; i < items.size(); i++) {
             Sellable item = items.get(i);
-            details.append(String.format("Item %d:\n", i + 1));
+            details.append(String.format(AnsiColors.WHITE + "Item %d:\n" + AnsiColors.RESET, i + 1));
             details.append(item.getDetails());
             details.append("\n");
         }
-        details.append("-----------------------------\n");
-        details.append(String.format("Subtotal: $%.2f\n", calculateTotal()));
+        details.append(AnsiColors.BLUE + "-----------------------------\n" + AnsiColors.RESET);
+        details.append(String.format(AnsiColors.BRIGHT_CYAN + AnsiColors.BOLD + "Total Order Cost: $%.2f\n" + AnsiColors.RESET, calculateTotal()));
         return details.toString();
     }
 }

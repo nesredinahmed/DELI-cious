@@ -1,6 +1,7 @@
 package com.delicous.view;
 
 import com.delicous.model.Order;
+import com.delicous.utilities.AnsiColors; // Import AnsiColors
 import com.delicous.utilities.ReceiptLogger;
 
 import java.util.Scanner;
@@ -17,12 +18,12 @@ public class CheckoutScreen implements Screen {
 
     @Override
     public void display() {
-        System.out.println("\n--- Checkout ---");
-        System.out.println(currentOrder.getDetails()); // Display full order details
-        System.out.println("--------------------");
-        System.out.println("1) Confirm Order (Generate Receipt)");
-        System.out.println("0) Cancel Order (Return to Home)");
-        System.out.print("Enter your choice: ");
+        System.out.println(AnsiColors.BOLD + AnsiColors.GREEN + "\n--- Checkout ---" + AnsiColors.RESET);
+        System.out.println(currentOrder.getDetails()); // Display full order details (now with colors)
+        System.out.println(AnsiColors.GREEN + "--------------------" + AnsiColors.RESET);
+        System.out.println(AnsiColors.YELLOW + "1) Confirm Order (Generate Receipt)" + AnsiColors.RESET);
+        System.out.println(AnsiColors.RED + "0) Cancel Order (Return to Home)" + AnsiColors.RESET);
+        System.out.print(AnsiColors.BRIGHT_BLUE + "Enter your choice: " + AnsiColors.RESET);
     }
 
     @Override
@@ -31,20 +32,20 @@ public class CheckoutScreen implements Screen {
         try {
             choice = Integer.parseInt(scanner.nextLine());
         } catch (NumberFormatException e) {
-            System.out.println("Invalid input. Please enter a number.");
+            System.out.println(AnsiColors.RED + "Invalid input. Please enter a number." + AnsiColors.RESET);
             return "checkout"; // Stay on checkout screen
         }
 
         switch (choice) {
             case 1:
                 ReceiptLogger.saveReceipt(currentOrder);
-                System.out.println("Order confirmed! Receipt generated.");
+                System.out.println(AnsiColors.GREEN + "Order confirmed! Receipt generated." + AnsiColors.RESET);
                 return "new_order_and_home"; // Special command to create new order and go home
             case 0:
-                System.out.println("Order cancelled. Returning to Home Screen.");
+                System.out.println(AnsiColors.YELLOW + "Order cancelled. Returning to Home Screen." + AnsiColors.RESET);
                 return "cancel_order_and_home"; // Special command to cancel and go home
             default:
-                System.out.println("Invalid choice. Please try again.");
+                System.out.println(AnsiColors.RED + "Invalid choice. Please try again." + AnsiColors.RESET);
                 return "checkout"; // Stay on checkout screen
         }
     }

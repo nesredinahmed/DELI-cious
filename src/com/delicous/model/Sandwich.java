@@ -1,5 +1,6 @@
 package com.delicous.model;
 
+import com.delicous.utilities.AnsiColors; // Import AnsiColors
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -62,7 +63,7 @@ public class Sandwich implements Sellable {
     @Override
     public String getDetails() {
         StringBuilder details = new StringBuilder();
-        details.append(String.format("%s Sandwich on %s bread (%.2f)\n", size, bread.getType(), bread.getPrice(size)));
+        details.append(String.format(AnsiColors.CYAN + "  %s Sandwich on %s bread (Base: $%.2f)\n" + AnsiColors.RESET, size, bread.getType(), bread.getPrice(size)));
 
         // Filter and list toppings
         List<Topping> regularToppings = toppings.stream()
@@ -73,7 +74,7 @@ public class Sandwich implements Sellable {
                 .collect(Collectors.toList());
 
         if (!regularToppings.isEmpty()) {
-            details.append("  Regular Toppings (Included): ");
+            details.append(AnsiColors.BRIGHT_GREEN + "    Regular Toppings (Included): " + AnsiColors.RESET);
             details.append(regularToppings.stream()
                     .map(Topping::toString)
                     .collect(Collectors.joining(", ")));
@@ -81,14 +82,14 @@ public class Sandwich implements Sellable {
         }
 
         if (!premiumToppings.isEmpty()) {
-            details.append("  Premium Toppings:\n");
+            details.append(AnsiColors.BRIGHT_YELLOW + "    Premium Toppings:\n" + AnsiColors.RESET);
             for (Topping pTopping : premiumToppings) {
-                details.append(String.format("    - %s ($%.2f)\n", pTopping.toString(), pTopping.getPrice(size)));
+                details.append(String.format("      - %s (%s$%.2f%s)\n", pTopping.toString(), AnsiColors.YELLOW, pTopping.getPrice(size), AnsiColors.RESET));
             }
         }
 
-        details.append(String.format("  Toasted: %s\n", toasted ? "Yes" : "No"));
-        details.append(String.format("  Sandwich Total: $%.2f\n", getPrice()));
+        details.append(String.format(AnsiColors.PURPLE + "    Toasted: %s\n" + AnsiColors.RESET, toasted ? "Yes" : "No"));
+        details.append(String.format(AnsiColors.CYAN + "  Sandwich Total: $%s%.2f%s\n" + AnsiColors.RESET, AnsiColors.BOLD, getPrice(), AnsiColors.RESET));
         return details.toString();
     }
 }
