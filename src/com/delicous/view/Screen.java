@@ -1,0 +1,4 @@
+package com.delicous.view;
+
+public class Screen {
+}
