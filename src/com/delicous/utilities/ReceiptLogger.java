@@ -1,4 +1,4 @@
-package com.delicous.util;
+package com.delicous.utilities;
 
 import com.delicous.model.Order;
 
@@ -9,9 +9,8 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-/**
- * Utility class responsible for logging order details to a receipt file.
- */
+// Utility class responsible for logging order details to a receipt file.
+
 public class ReceiptLogger {
 
     private static final String RECEIPTS_FOLDER = "receipts";

@@ -73,7 +73,7 @@ public class Sandwich implements Sellable {
                 .collect(Collectors.toList());
 
         if (!regularToppings.isEmpty()) {
-            details.append("  Regular Toppings: ");
+            details.append("  Regular Toppings (Included): ");
             details.append(regularToppings.stream()
                     .map(Topping::toString)
                     .collect(Collectors.joining(", ")));

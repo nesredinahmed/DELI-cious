@@ -1,7 +1,7 @@
 package com.delicous.view;
 
 import com.delicous.model.Order;
-import com.delicous.util.ReceiptLogger;
+import com.delicous.utilities.ReceiptLogger;
 
 import java.util.Scanner;
 

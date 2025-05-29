@@ -1,4 +1,4 @@
-package com.delicous.util;
+package com.delicous.utilities;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -14,11 +14,20 @@ public class Menu {
     private static final List<String> BREAD_TYPES = Collections.unmodifiableList(Arrays.asList("white", "wheat", "rye", "wrap"));
     private static final List<String> MEAT_TYPES = Collections.unmodifiableList(Arrays.asList("steak", "ham", "salami", "roast beef", "chicken", "bacon"));
     private static final List<String> CHEESE_TYPES = Collections.unmodifiableList(Arrays.asList("american", "provolone", "cheddar", "swiss"));
+
+    // Separated Regular Toppings, Sauces, and Sides
     private static final List<String> REGULAR_TOPPINGS = Collections.unmodifiableList(Arrays.asList(
             "lettuce", "peppers", "onions", "tomatoes", "jalapeños", "cucumbers", "pickles",
-            "guacamole", "mushrooms", "mayo", "mustard", "ketchup", "ranch", "thousand islands",
-            "vinaigrette", "au jus", "sauce"
+            "guacamole", "mushrooms"
     ));
+    private static final List<String> SAUCE_TYPES = Collections.unmodifiableList(Arrays.asList(
+            "mayo", "mustard", "ketchup", "ranch", "thousand islands", "vinaigrette"
+    ));
+    private static final List<String> SIDE_TOPPINGS = Collections.unmodifiableList(Arrays.asList(
+            "au jus", "sauce" // Assuming "sauce" here means a side dipping sauce, not condiment
+    ));
+
+
     private static final List<String> DRINK_SIZES = Collections.unmodifiableList(Arrays.asList("Small", "Medium", "Large"));
     private static final List<String> DRINK_FLAVORS = Collections.unmodifiableList(Arrays.asList("Coke", "Pepsi", "Sprite", "Orange Juice", "Water"));
     private static final List<String> CHIP_TYPES = Collections.unmodifiableList(Arrays.asList("Original", "Salt & Vinegar", "BBQ", "Cheddar", "Sour Cream & Onion"));
@@ -41,6 +50,14 @@ public class Menu {
 
     public static List<String> getRegularToppings() {
         return REGULAR_TOPPINGS;
+    }
+
+    public static List<String> getSauceTypes() { // New getter
+        return SAUCE_TYPES;
+    }
+
+    public static List<String> getSideToppings() { // New getter
+        return SIDE_TOPPINGS;
     }
 
     public static List<String> getDrinkSizes() {

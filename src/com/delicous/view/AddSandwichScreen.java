@@ -1,7 +1,7 @@
 package com.delicous.view;
 
 import com.delicous.model.*;
-import com.delicous.util.Menu; // Import the new Menu class
+import com.delicous.utilities.Menu; // Import the new Menu class
 
 import java.util.Arrays;
 import java.util.List;
@@ -12,13 +12,6 @@ import java.util.Scanner;
  */
 public class AddSandwichScreen implements Screen {
     private Order currentOrder;
-    // Removed hardcoded lists, now using Menu class
-    // private static final List<String> SANDWICH_SIZES = Arrays.asList("4\"", "8\"", "12\"");
-    // private static final List<String> BREAD_TYPES = Arrays.asList("white", "wheat", "rye", "wrap");
-    // private static final List<String> MEAT_TYPES = Arrays.asList("steak", "ham", "salami", "roast beef", "chicken", "bacon");
-    // private static final List<String> CHEESE_TYPES = Arrays.asList("american", "provolone", "cheddar", "swiss");
-    // private static final List<String> REGULAR_TOPPINGS = Arrays.asList("lettuce", "peppers", "onions", "tomatoes", "jalapeños", "cucumbers", "pickles", "guacamole", "mushrooms", "mayo", "mustard", "ketchup", "ranch", "thousand islands", "vinaigrette", "au jus", "sauce");
-
 
     public AddSandwichScreen(Order currentOrder) {
         this.currentOrder = currentOrder;
@@ -50,10 +43,16 @@ public class AddSandwichScreen implements Screen {
         // 4. Add Cheeses
         addPremiumToppings(scanner, sandwich, Menu.getCheeseTypes(), "Cheese", Cheese.class);
 
-        // 5. Add Regular Toppings (including sauces and sides)
-        addRegularToppings(scanner, sandwich, Menu.getRegularToppings());
+        // 5. Add Regular Toppings
+        addRegularToppings(scanner, sandwich, Menu.getRegularToppings(), "Regular Toppings");
 
-        // 6. Toasted?
+        // 6. Add Sauces
+        addRegularToppings(scanner, sandwich, Menu.getSauceTypes(), "Sauces");
+
+        // 7. Add Sides
+        addRegularToppings(scanner, sandwich, Menu.getSideToppings(), "Sides");
+
+        // 8. Toasted?
         System.out.print("Would you like the sandwich toasted? (yes/no): ");
         String toastedInput = scanner.nextLine().trim().toLowerCase();
         sandwich.setToasted(toastedInput.equals("yes"));
@@ -153,16 +152,17 @@ public class AddSandwichScreen implements Screen {
      * Helper method to add regular toppings (including sauces and sides) to a sandwich.
      * @param scanner Scanner for input.
      * @param sandwich The sandwich to add toppings to.
-     * @param availableToppings List of available topping names.
+     * @param availableItems List of available item names for this category.
+     * @param categoryName Name of the category (e.g., "Regular Toppings", "Sauces", "Sides").
      */
-    private void addRegularToppings(Scanner scanner, Sandwich sandwich, List<String> availableToppings) {
+    private void addRegularToppings(Scanner scanner, Sandwich sandwich, List<String> availableItems, String categoryName) {
         while (true) {
-            System.out.println("\n--- Add Other Toppings (Included) ---");
-            System.out.println("Available Toppings/Sauces/Sides:");
-            for (int i = 0; i < availableToppings.size(); i++) {
-                System.out.println((i + 1) + ") " + availableToppings.get(i));
+            System.out.println("\n--- Add " + categoryName + " (Included) ---");
+            System.out.println("Available " + categoryName + ":");
+            for (int i = 0; i < availableItems.size(); i++) {
+                System.out.println((i + 1) + ") " + availableItems.get(i));
             }
-            System.out.println("0) Done adding toppings");
+            System.out.println("0) Done adding " + categoryName);
             System.out.print("Enter choice: ");
 
             try {
@@ -170,11 +170,11 @@ public class AddSandwichScreen implements Screen {
                 if (choice == 0) {
                     break; // Done adding this category
                 }
-                if (choice > 0 && choice <= availableToppings.size()) {
-                    String selectedToppingName = availableToppings.get(choice - 1);
+                if (choice > 0 && choice <= availableItems.size()) {
+                    String selectedItemName = availableItems.get(choice - 1);
                     // Regular toppings don't have extra cost, so 'isExtra' is just for display
-                    sandwich.addTopping(new RegularTopping(selectedToppingName, false));
-                    System.out.println(selectedToppingName + " added.");
+                    sandwich.addTopping(new RegularTopping(selectedItemName, false));
+                    System.out.println(selectedItemName + " added.");
                 } else {
                     System.out.println("Invalid choice. Please try again.");
                 }

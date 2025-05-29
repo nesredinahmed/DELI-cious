@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="47df988a-a8e3-4936-bb16-b16b5b53ad30" name="Changes" comment="Update">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/delicous/model/Bread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/model/Bread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/delicous/model/Cheese.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/model/Cheese.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/delicous/model/Chips.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/model/Chips.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/delicous/model/Drink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/model/Drink.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/delicous/model/Meat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/model/Meat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/delicous/model/Sandwich.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/model/Sandwich.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/delicous/util/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/utilities/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/delicous/util/PriceList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/utilities/PriceList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/delicous/util/ReceiptLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/utilities/ReceiptLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/delicous/view/AddChipsScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/view/AddChipsScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/delicous/view/AddDrinkScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/view/AddDrinkScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/delicous/view/AddSandwichScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/view/AddSandwichScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/delicous/view/CheckoutScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/view/CheckoutScreen.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/nesredinahmed/DELI-cious.git",
+    "accountId": "40973db4-0d70-4c8a-8933-bd49b64cdb63"
+  }
+}]]></component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Application.executor": "Run",
+    "git-widget-placeholder": "main"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+</project>

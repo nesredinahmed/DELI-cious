@@ -1,4 +1,4 @@
-package com.delicous.util;
+package com.delicous.utilities;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -56,64 +56,44 @@ public class PriceList {
     // Chips price (fixed)
     private static final double CHIPS_PRICE = 1.50;
 
-    /**
-     * Retrieves the base price for a sandwich of a given size.
-     * @param size The size of the sandwich (e.g., "4\"", "8\"", "12\"").
-     * @return The base price of the sandwich.
-     */
+//    Retrieves the base price for a sandwich of a given size.
+
     public static double getSandwichBasePrice(String size) {
         return SANDWICH_BASE_PRICES.getOrDefault(size, 0.0);
     }
 
-    /**
-     * Retrieves the price for a meat topping of a given sandwich size.
-     * @param size The size of the sandwich.
-     * @return The price of the meat topping.
-     */
+//      Retrieves the price for a meat topping of a given sandwich size.
+
     public static double getMeatPrice(String size) {
         return MEAT_PRICES.getOrDefault(size, 0.0);
     }
 
-    /**
-     * Retrieves the price for an extra meat topping of a given sandwich size.
-     * @param size The size of the sandwich.
-     * @return The price of the extra meat topping.
-     */
+// Retrieves the price for an extra meat topping of a given sandwich size.
+
     public static double getExtraMeatPrice(String size) {
         return EXTRA_MEAT_PRICES.getOrDefault(size, 0.0);
     }
+// Retrieves the price for a cheese topping of a given sandwich size.
 
-    /**
-     * Retrieves the price for a cheese topping of a given sandwich size.
-     * @param size The size of the sandwich.
-     * @return The price of the cheese topping.
-     */
     public static double getCheesePrice(String size) {
         return CHEESE_PRICES.getOrDefault(size, 0.0);
     }
 
-    /**
-     * Retrieves the price for an extra cheese topping of a given sandwich size.
-     * @param size The size of the sandwich.
-     * @return The price of the extra cheese topping.
-     */
+// Retrieves the price for an extra cheese topping of a given sandwich size.
+
     public static double getExtraCheesePrice(String size) {
         return EXTRA_CHEESE_PRICES.getOrDefault(size, 0.0);
     }
 
-    /**
-     * Retrieves the price for a drink of a given size.
-     * @param size The size of the drink (e.g., "Small", "Medium", "Large").
-     * @return The price of the drink.
-     */
+// Retrieves the price for a drink of a given size.
+
     public static double getDrinkPrice(String size) {
         return DRINK_PRICES.getOrDefault(size, 0.0);
     }
 
-    /**
-     * Retrieves the price for chips.
-     * @return The price of chips.
-     */
+
+//      Retrieves the price for chips.
+//      return The price of chips.
     public static double getChipsPrice() {
         return CHIPS_PRICE;
     }

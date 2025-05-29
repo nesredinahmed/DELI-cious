@@ -1,0 +1,21 @@
+DELI-cious Order Receipt
+-------------------------
+Order Date: 2025-05-28 17:54:54
+-------------------------
+
+--- Current Order Details ---
+Item 1:
+4" Sandwich on white bread (5.50)
+  Regular Toppings: jalapeños, sauce
+  Premium Toppings:
+    - salami (Extra) ($0.50)
+    - american ($0.75)
+  Toasted: No
+  Sandwich Total: $6.75
+
+-----------------------------
+Subtotal: $6.75
+
+-------------------------
+Total Order Cost: $6.75
+-------------------------

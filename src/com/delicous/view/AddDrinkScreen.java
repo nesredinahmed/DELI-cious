@@ -2,9 +2,8 @@ package com.delicous.view;
 
 import com.delicous.model.Drink;
 import com.delicous.model.Order;
-import com.delicous.util.Menu; // Import the new Menu class
+import com.delicous.utilities.Menu; // Import the new Menu class
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
