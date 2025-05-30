@@ -1,8 +1,7 @@
 package com.delicious.utilities;
 
-/**
- * Utility class for ANSI escape codes to add color and formatting to console output.
- */
+// Utility class for output.
+
 public class AnsiColors {
     public static final String RESET = "\u001B[0m";
     public static final String RED = "\u001B[31m";

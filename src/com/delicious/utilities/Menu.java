@@ -24,7 +24,7 @@ public class Menu {
             "mayo", "mustard", "ketchup", "ranch", "thousand islands", "vinaigrette"
     ));
     private static final List<String> SIDE_TOPPINGS = Collections.unmodifiableList(Arrays.asList(
-            "au jus", "sauce" // Assuming "sauce" here means a side dipping sauce, not condiment
+            "au jus", "sauce"
     ));
 
 
