@@ -85,7 +85,7 @@
 - #### The method uses a while(true) loop to ensure that the user is repeatedly prompted until they provide valid input or explicitly choose to cancel.
 
 - #### Without this method, you would have to write the same block of code (looping through options, printing, reading input, validating) over and
-       over again in different parts of your application.
+  #### over again in different parts of your application.
 ![Screenshot 2025-05-29 221215.png](Screenshot/Screenshot%202025-05-29%20221215.png)
 
 
