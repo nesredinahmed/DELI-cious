@@ -1,0 +1,19 @@
+DELI-cious Order Receipt
+-------------------------
+Order Date: 2025-05-29 20:25:26
+-------------------------
+
+--- Current Order Details ---
+Item 1:
+  4" Sandwich on white bread (Base: $5.50)
+[93m    Premium Toppings:
+[0m      - ham ([33m$1.00[0m)
+[35m    Toasted: No
+[0m[36m  Sandwich Total: $[1m6.50[0m
+[0m
+-----------------------------
+Total Order Cost: $6.50
+
+-------------------------
+Total Order Cost: $6.50
+-------------------------

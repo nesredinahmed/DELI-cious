@@ -39,7 +39,9 @@ public class ReceiptLogger {
             writer.write("Order Date: " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")) + "\n");
             writer.write("-------------------------\n\n");
 
-            writer.write(order.getDetails()); // Get the detailed string representation of the order
+            String value = order.getDetails().replaceAll("\u001B\\[[;\\d]*m", "");
+
+            writer.write(value); // Get the detailed string representation of the order
 
             writer.write("\n-------------------------\n");
             writer.write(String.format("Total Order Cost: $%.2f\n", order.calculateTotal()));

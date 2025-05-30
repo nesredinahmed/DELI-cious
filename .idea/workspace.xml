@@ -4,21 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47df988a-a8e3-4936-bb16-b16b5b53ad30" name="Changes" comment="Updating for Sides and sauces">
-      <change afterPath="$PROJECT_DIR$/src/com/delicous/utilities/AnsiColors.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="47df988a-a8e3-4936-bb16-b16b5b53ad30" name="Changes" comment="Updating for Ui">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DELI-cious_G.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DELI-cious.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/delicous/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/model/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/delicous/model/Sandwich.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/model/Sandwich.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/delicous/view/AddChipsScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/view/AddChipsScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/delicous/view/AddDrinkScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/view/AddDrinkScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/delicous/view/AddSandwichScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/view/AddSandwichScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/delicous/view/CheckoutScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/view/CheckoutScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/delicous/view/HomeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/view/HomeScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/delicous/view/OrderScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/view/OrderScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/delicous/utilities/ReceiptLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/utilities/ReceiptLogger.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,11 +61,20 @@
       <option name="project" value="LOCAL" />
       <updated>1748481805221</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Updating for Ui">
+      <option name="closed" value="true" />
+      <created>1748483235800</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1748483235800</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updating for Sides and sauces" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating for Sides and sauces" />
+    <MESSAGE value="Updating for Ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updating for Ui" />
   </component>
 </project>
