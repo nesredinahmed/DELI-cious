@@ -1,6 +1,6 @@
-package com.delicous.utilities;
+package com.delicious.utilities;
 
-import com.delicous.model.Order;
+import com.delicious.model.Order;
 
 import java.io.BufferedWriter;
 import java.io.File;

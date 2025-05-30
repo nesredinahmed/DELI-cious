@@ -1,10 +1,9 @@
-package com.delicous.view;
+package com.delicious.screens;
 
-import com.delicous.model.*;
-import com.delicous.utilities.AnsiColors; // Import AnsiColors
-import com.delicous.utilities.Menu;
+import com.delicious.model.*;
+import com.delicious.utilities.AnsiColors; // Import AnsiColors
+import com.delicious.utilities.Menu;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 

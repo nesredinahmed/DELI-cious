@@ -1,4 +1,4 @@
-package com.delicous.utilities;
+package com.delicious.utilities;
 
 import java.util.Arrays;
 import java.util.Collections;

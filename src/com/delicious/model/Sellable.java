@@ -1,4 +1,4 @@
-package com.delicous.model;
+package com.delicious.model;
 
 /**
  * Interface for all items that can be sold and added to an order.

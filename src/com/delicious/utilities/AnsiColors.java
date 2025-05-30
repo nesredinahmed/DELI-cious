@@ -1,4 +1,4 @@
-package com.delicous.utilities;
+package com.delicious.utilities;
 
 /**
  * Utility class for ANSI escape codes to add color and formatting to console output.

@@ -1,6 +1,6 @@
-package com.delicous.model;
+package com.delicious.model;
 
-import com.delicous.utilities.PriceList;
+import com.delicious.utilities.PriceList;
 
 /**
  * Represents a cheese topping for a sandwich.

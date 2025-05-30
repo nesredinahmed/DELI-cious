@@ -1,21 +1,20 @@
-package com.delicous.view;
+package com.delicious.screens;
 
-import com.delicous.model.Drink;
-import com.delicous.model.Order;
-import com.delicous.utilities.AnsiColors; // Import AnsiColors
-import com.delicous.utilities.Menu;
+import com.delicious.model.Chips;
+import com.delicious.model.Order;
+import com.delicious.utilities.AnsiColors; // Import AnsiColors
+import com.delicious.utilities.Menu;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 /**
- * Screen for adding a drink to the order.
+ * Screen for adding chips to the order.
  */
-public class AddDrinkScreen implements Screen {
+public class AddChipsScreen implements Screen {
     private Order currentOrder;
 
-    public AddDrinkScreen(Order currentOrder) {
+    public AddChipsScreen(Order currentOrder) {
         this.currentOrder = currentOrder;
     }
 
@@ -26,19 +25,15 @@ public class AddDrinkScreen implements Screen {
 
     @Override
     public String handleInput(Scanner scanner) {
-        System.out.println(AnsiColors.BOLD + AnsiColors.GREEN + "\n--- Add Drink ---" + AnsiColors.RESET);
+        System.out.println(AnsiColors.BOLD + AnsiColors.GREEN + "\n--- Add Chips ---" + AnsiColors.RESET);
 
-        // 1. Select Drink Size
-        String size = selectOption(scanner, AnsiColors.BRIGHT_WHITE + "Select drink size:" + AnsiColors.RESET, Menu.getDrinkSizes());
-        if (size == null) return "order"; // User cancelled
+        // 1. Select Chip Type
+        String chipType = selectOption(scanner, AnsiColors.BRIGHT_WHITE + "Select chip type:" + AnsiColors.RESET, Menu.getChipTypes());
+        if (chipType == null) return "order"; // User cancelled
 
-        // 2. Select Drink Flavor
-        String flavor = selectOption(scanner, AnsiColors.BRIGHT_WHITE + "Select drink flavor:" + AnsiColors.RESET, Menu.getDrinkFlavors());
-        if (flavor == null) return "order"; // User cancelled
-
-        Drink drink = new Drink(flavor, size);
-        currentOrder.addItem(drink);
-        System.out.println(AnsiColors.GREEN + "Drink added to order: " + drink.getDetails() + AnsiColors.RESET);
+        Chips chips = new Chips(chipType);
+        currentOrder.addItem(chips);
+        System.out.println(AnsiColors.GREEN + "Chips added to order: " + chips.getDetails() + AnsiColors.RESET);
         return "order"; // Return to order screen
     }
 

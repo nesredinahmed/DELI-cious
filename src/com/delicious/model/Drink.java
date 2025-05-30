@@ -1,6 +1,6 @@
-package com.delicous.model;
+package com.delicious.model;
 
-import com.delicous.utilities.PriceList;
+import com.delicious.utilities.PriceList;
 
 /**
  * Represents a drink that can be added to an order.

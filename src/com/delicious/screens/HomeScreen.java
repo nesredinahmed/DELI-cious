@@ -1,6 +1,6 @@
-package com.delicous.view;
+package com.delicious.screens;
 
-import com.delicous.utilities.AnsiColors; // Import AnsiColors
+import com.delicious.utilities.AnsiColors; // Import AnsiColors
 import java.util.Scanner;
 
 /**

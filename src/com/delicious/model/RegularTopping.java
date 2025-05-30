@@ -1,4 +1,4 @@
-package com.delicous.model;
+package com.delicious.model;
 
 /**
  * Represents a regular sandwich topping (e.g., lettuce, tomatoes).

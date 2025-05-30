@@ -1,4 +1,4 @@
-package com.delicous.view;
+package com.delicious.screens;
 
 import java.util.Scanner;
 

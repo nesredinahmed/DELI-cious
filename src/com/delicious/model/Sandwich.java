@@ -1,6 +1,6 @@
-package com.delicous.model;
+package com.delicious.model;
 
-import com.delicous.utilities.AnsiColors; // Import AnsiColors
+import com.delicious.utilities.AnsiColors; // Import AnsiColors
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
