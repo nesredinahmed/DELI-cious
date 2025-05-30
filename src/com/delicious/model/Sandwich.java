@@ -68,10 +68,10 @@ public class Sandwich implements Sellable {
         // Filter and list toppings
         List<Topping> regularToppings = toppings.stream()
                 .filter(t -> t instanceof RegularTopping)
-                .collect(Collectors.toList());
+                .toList();
         List<Topping> premiumToppings = toppings.stream()
                 .filter(t -> t instanceof PremiumTopping)
-                .collect(Collectors.toList());
+                .toList();
 
         if (!regularToppings.isEmpty()) {
             details.append(AnsiColors.BRIGHT_GREEN + "    Regular Toppings (Included): " + AnsiColors.RESET);
