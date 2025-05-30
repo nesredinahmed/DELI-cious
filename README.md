@@ -1,301 +1,142 @@
-DELI-cious: Custom Sandwich Shop CLI Application
-Project Description
-DELI-cious is a command-line interface (CLI) point-of-sale application designed for a custom sandwich shop. This application automates the order process, allowing customers to fully customize their sandwich orders, add drinks and chips, and generate a detailed receipt. The project emphasizes Object-Oriented Analysis and Design (OOP) principles, utilizing classes and interfaces to create a modular, maintainable, and extensible solution.
+# Sandwich Shop Ordering System
+## Overview
+### This is a Java-based sandwich shop ordering application that allows customers to:
 
-Key Features:
+- #### Add drinks and chips to their order
 
-Customizable Sandwiches: Customers can choose sandwich size (4", 8", 12"), bread type (white, wheat, rye, wrap), and various toppings.
+- #### Review and checkout their order
 
-Topping Categories: Toppings are categorized as regular (included), premium meats, and premium cheeses, with options for "extra" premium toppings at an additional cost.
+- #### Save order receipts
 
-Sauces and Sides: Customers can add a variety of sauces and side items to their sandwiches.
+- #### The application follows object-oriented principles with a clean architecture and separation of concerns.
 
-Order Management: Ability to add multiple sandwiches, drinks (with size and flavor), and chips to a single order.
+## Key Features
+- #### Order Management
 
-Real-time Order Details: Displays current order details and total cost.
+- #### Create new orders with multiple items
 
-Receipt Generation: Upon checkout, a detailed receipt is generated and saved to a receipts folder, named by the date and time of the order.
+- #### Calculate order total
 
-Intuitive CLI: Guides the user through the ordering process with clear prompts and options.
+- #### Complete or cancel orders
 
-Application Screens
-Below are conceptual representations of the application's main screens. In a real project, you would replace these placeholders with actual screenshots of your running CLI application.
+## Menu Items
+- #### Sandwiches with customizable:
 
-1. Home Screen
-   (Screenshot of Home Screen - e.g., "Welcome to DELI-cious!", "1) New Order", "0) Exit")
+- #### Bread type (white, wheat, rye, etc.)
 
---- DELI-cious Home Screen ---
-1) New Order
-0) Exit
-   Enter your choice:
+- #### Size (4", 8", 12")
 
+- #### Toppings (regular and premium)
 
-2. Order Screen
-   (Screenshot of Order Screen - e.g., current order summary, options to add items, checkout, cancel)
+- #### Toasting option
 
---- Order Screen ---
-Current Order Items:
-(No items added yet)
---------------------
-1) Add Sandwich
-2) Add Drink
-3) Add Chips
-4) Checkout
-0) Cancel Order
-   Enter your choice:
+- #### Drinks with size and flavor options
 
+- #### Chips with different types
 
-3. Add Sandwich Screen (Interactive Flow)
-   (Series of screenshots showing prompts for size, bread, meats, cheeses, regular toppings, sauces, sides, and toasted option)
+## User Interface
+- #### Screen-based navigation system
 
---- Add Sandwich ---
-Select sandwich size:
-1) 4"
-2) 8"
-3) 12"
-0) Cancel
-   Enter choice:
+- #### Intuitive menu selection
 
+- #### Order summary display
 
-(... and subsequent prompts for bread, toppings, etc.)
+- #### Technical Details
+## Design Patterns
+- #### Screen navigation using State pattern
 
-4. Checkout Screen
-   (Screenshot of Checkout Screen - e.g., final order details, total, confirm/cancel options)
+- #### Polymorphic pricing for different item types
 
---- Checkout ---
---- Current Order Details ---
-Item 1:
-4" Sandwich on white bread (5.50)
-Regular Toppings (Included): lettuce, tomatoes
-Premium Toppings:
-- steak ($1.00)
-- american ($0.75)
-Toasted: Yes
-Sandwich Total: $7.25
+- #### Separation of concerns between UI and business logic
 
------------------------------
-Subtotal: $7.25
---------------------
-1) Confirm Order (Generate Receipt)
-0) Cancel Order (Return to Home)
-   Enter your choice:
+## Class Structure
+- #### Application: Main controller
+
+- #### Screens: Home, Order, AddItem, Checkout
+
+- ####  Management: Order, OrderManager
+
+- #### Menu Items: Sandwich, Drink, Chips implementing Sellable interface
+
+- #### Components: Bread, Topping hierarchy
+
+## How to Run
+- #### Clone the repository
+
+- #### Compile the Java files
+
+- #### Run the Application class
+
+## Future Enhancements
+- #### Persistence for order history
+- 
+- #### Admin interface for menu management
+
+- #### Payment system integration
+
+- #### Enhanced UI with graphics
 
 
-Interesting Piece of Code: The selectOption Helper Method
-In a command-line application, repeatedly asking the user to choose from a list of numbered options is a very common task. To avoid duplicating this logic throughout the code and to ensure consistent input validation, a reusable helper method is invaluable. The selectOption method in AddSandwichScreen (and other screen classes) perfectly demonstrates this.
+## Interesting Code
+- #### High Reusability DRY Principle - Don't Repeat Yourself
 
-This method takes a prompt message, a List of options, and handles displaying them, reading user input, validating it, and allowing for cancellation.
+- #### In a CLI application, you frequently need to present a list of choices. 
 
-// From src/main/java/com/delicous/view/AddSandwichScreen.java
+- #### The method uses a while(true) loop to ensure that the user is repeatedly prompted until they provide valid input or explicitly choose to cancel.
 
-/**
-* Helper method to prompt user for selection from a list of options.
-* @param scanner Scanner for input.
-* @param prompt The message to display to the user.
-* @param options The list of available options.
-* @return The selected option string, or null if user cancels.
-  */
-  private String selectOption(Scanner scanner, String prompt, List<String> options) {
-  while (true) { // Keep looping until valid input or cancellation
-  System.out.println(prompt); // Display the main question/prompt
-  for (int i = 0; i < options.size(); i++) {
-  System.out.println((i + 1) + ") " + options.get(i)); // Display numbered options
-  }
-  System.out.println("0) Cancel"); // Option to cancel
-  System.out.print("Enter choice: "); // Prompt for input
-
-       try {
-           int choice = Integer.parseInt(scanner.nextLine()); // Read input and convert to int
-           if (choice == 0) {
-               System.out.println("Operation cancelled.");
-               return null; // Return null if user cancels
-           }
-           if (choice > 0 && choice <= options.size()) {
-               return options.get(choice - 1); // Return the selected option (adjust for 0-based index)
-           } else {
-               System.out.println("Invalid choice. Please try again."); // Handle out-of-range numbers
-           }
-       } catch (NumberFormatException e) {
-           System.out.println("Invalid input. Please enter a number."); // Handle non-numeric input
-       }
-  }
-  }
+- #### Without this method, you would have to write the same block of code (looping through options, printing, reading input, validating) over and
+       over again in different parts of your application.
+![Screenshot 2025-05-29 221215.png](Screenshot/Screenshot%202025-05-29%20221215.png)
 
 
-Why this code is interesting:
+# CLI UI Screens
 
-Reusability: This single method is used across multiple screens and for various selection tasks (sandwich size, bread, drink flavor, etc.), preventing redundant code.
+- ## Home Screens
+![Screenshot 2025-05-29 213815.png](Screenshot/Screenshot%202025-05-29%20213815.png)
 
-Robustness: It includes essential error handling (try-catch for NumberFormatException) and input validation (checking if the choice is within the valid range), making the application more resilient to incorrect user input.
+- ## Order Screens
+![Screenshot 2025-05-29 213825.png](Screenshot/Screenshot%202025-05-29%20213825.png)
 
-User Experience: It provides a consistent and clear way for users to make choices, including an explicit "Cancel" option, which is crucial for navigating CLI applications.
+- ## Sandwich Screens
+![Screenshot 2025-05-29 213833.png](Screenshot/Screenshot%202025-05-29%20213833.png)
 
-Abstraction: It abstracts away the details of how options are presented and how input is read and validated, allowing the calling code to focus on the business logic of what is being selected.
+- ## Meat Screens
 
-Diagrams
-Class Diagram
-(Placeholder for an image of your Class Diagram export - e.g., a .png or .svg generated from a UML tool)
+![Screenshot 2025-05-29 213841.png](Screenshot/Screenshot%202025-05-29%20213841.png)
 
-This diagram visually represents the classes, interfaces, and their relationships within the DELI-cious application, illustrating the object-oriented design.
 
-For your reference, here is the PlantUML text used to generate the class diagram, which you can paste into a PlantUML renderer (like PlantUML Online Server):
+- ## Cheese Screens
+![Screenshot 2025-05-29 213903.png](Screenshot/Screenshot%202025-05-29%20213903.png)
 
-@startuml
-skinparam handwritten true
-skinparam shadowing false
 
-interface Screen {
-+ display(): void
-+ handleInput(Scanner): String
-}
+- ## Regular Topping Screens
 
-class Application {
-- scanner: Scanner
-- screens: Map<String, Screen>
-- currentOrder: Order
-- currentScreenName: String
-+ run(): void
-- initializeScreens(): void
-+ main(String[]): void
-}
+![Screenshot 2025-05-29 213914.png](Screenshot/Screenshot%202025-05-29%20213914.png)
 
-class HomeScreen implements Screen
-class OrderScreen implements Screen
-class AddSandwichScreen implements Screen
-class AddDrinkScreen implements Screen
-class AddChipsScreen implements Screen
-class CheckoutScreen implements Screen
+- ## Sauces Screens
 
-Application "1" *-- "1" Order : manages
-Application "1" *-- "many" Screen : knows about
+![Screenshot 2025-05-29 213923.png](Screenshot/Screenshot%202025-05-29%20213923.png)
 
-OrderScreen "1" *-- "1" Order
-AddSandwichScreen "1" *-- "1" Order
-AddDrinkScreen "1" *-- "1" Order
-AddChipsScreen "1" *-- "1" Order
-CheckoutScreen "1" *-- "1" Order
 
-interface Sellable {
-+ getPrice(): double
-+ getDetails(): String
-}
+- ## Sides Screens
 
-class Order {
-- items: List<Sellable>
-+ addItem(Sellable): void
-+ calculateTotal(): double
-+ getDetails(): String
-}
+![Screenshot 2025-05-29 214107.png](Screenshot/Screenshot%202025-05-29%20214107.png)
 
-Order "1" *-- "0..*" Sellable : aggregates
+- ## CheckOut Screens
 
-class Sandwich implements Sellable {
-- size: String
-- bread: Bread
-- toppings: List<Topping>
-- toasted: boolean
-+ addTopping(Topping): void
-+ setToasted(boolean): void
-+ getPrice(): double
-+ getDetails(): String
-}
+![Screenshot 2025-05-29 214158.png](Screenshot/Screenshot%202025-05-29%20214158.png)
 
-class Drink implements Sellable {
-- flavor: String
-- size: String
-+ getPrice(): double
-+ getDetails(): String
-}
 
-class Chips implements Sellable {
-- type: String
-+ getPrice(): double
-+ getDetails(): String
-}
+- ## Conformation Screens
 
-Sandwich "1" *-- "1" Bread
-Sandwich "1" *-- "0..*" Topping : aggregates
 
-class Bread {
-- type: String
-+ getPrice(String): double
-}
+![Screenshot 2025-05-29 214215.png](Screenshot/Screenshot%202025-05-29%20214215.png)
 
-abstract class Topping {
-# name: String
-# isExtra: boolean
-+ getPrice(String): double
-+ hasAdditionalCost(): boolean
-+ setExtra(boolean): void
-}
 
-class RegularTopping extends Topping {
-+ getPrice(String): double
-+ hasAdditionalCost(): boolean
-}
+- ## Exit Screens
 
-abstract class PremiumTopping extends Topping {
-+ hasAdditionalCost(): boolean
-}
+![Screenshot 2025-05-29 214235.png](Screenshot/Screenshot%202025-05-29%20214235.png)
 
-class Meat extends PremiumTopping {
-+ getPrice(String): double
-}
 
-class Cheese extends PremiumTopping {
-+ getPrice(String): double
-}
-
-class PriceList {
-- SANDWICH_BASE_PRICES: Map<String, Double>
-- MEAT_PRICES: Map<String, Double>
-- EXTRA_MEAT_PRICES: Map<String, Double>
-- CHEESE_PRICES: Map<String, Double>
-- REGULAR_TOPPINGS: List<String>
-- SAUCE_TYPES: List<String>
-- SIDE_TOPPINGS: List<String>
-- DRINK_SIZES: List<String>
-- DRINK_FLAVORS: List<String>
-- CHIP_TYPES: List<String>
-+ getSandwichBasePrice(String): double {static}
-+ getMeatPrice(String): double {static}
-+ getExtraMeatPrice(String): double {static}
-+ getCheesePrice(String): double {static}
-+ getExtraCheesePrice(String): double {static}
-+ getDrinkPrice(String): double {static}
-+ getChipsPrice(): double {static}
-}
-
-class Menu {
-- SANDWICH_SIZES: List<String>
-- BREAD_TYPES: List<String>
-- MEAT_TYPES: List<String>
-- CHEESE_TYPES: List<String>
-- REGULAR_TOPPINGS: List<String>
-- SAUCE_TYPES: List<String>
-- SIDE_TOPPINGS: List<String>
-- DRINK_SIZES: List<String>
-- DRINK_FLAVORS: List<String>
-- CHIP_TYPES: List<String>
-+ getSandwichSizes(): List<String> {static}
-+ getBreadTypes(): List<String> {static}
-+ getMeatTypes(): List<String> {static}
-+ getCheeseTypes(): List<String> {static}
-+ getRegularToppings(): List<String> {static}
-+ getSauceTypes(): List<String> {static}
-+ getSideToppings(): List<String> {static}
-+ getDrinkSizes(): List<String> {static}
-+ getDrinkFlavors(): List<String> {static}
-+ getChipTypes(): List<String> {static}
-}
-
-class ReceiptLogger {
-- RECEIPTS_FOLDER: String {static}
-- FILE_NAME_FORMATTER: DateTimeFormatter {static}
-+ saveReceipt(Order): void {static}
-}
-
-PriceList .. Menu : uses
-ReceiptLogger .. Order : uses
-
-@enduml
+## Author
+#### Nesredin.A

@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47df988a-a8e3-4936-bb16-b16b5b53ad30" name="Changes" comment="Updating for Ui">
+    <list default="true" id="47df988a-a8e3-4936-bb16-b16b5b53ad30" name="Changes" comment="Updating for Color">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/delicous/utilities/ReceiptLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/delicous/utilities/ReceiptLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,12 +68,21 @@
       <option name="project" value="LOCAL" />
       <updated>1748483235800</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Updating for Color">
+      <option name="closed" value="true" />
+      <created>1748579309066</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1748579309066</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updating for Sides and sauces" />
     <MESSAGE value="Updating for Ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating for Ui" />
+    <MESSAGE value="Updating for Color" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updating for Color" />
   </component>
 </project>
