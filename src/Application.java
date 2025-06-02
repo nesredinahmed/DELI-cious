@@ -95,7 +95,7 @@ public class Application {
                         "\n" +
                         " ----------------------------------------------------------------------------\n" +
                         " |                                                                          |\n" +
-                        " |         \uD83E\uDD6A              DELI-cious CLI POS - ORDER FRESH! \uD83E\uDD64            |\n" +
+                        " |         \uD83E\uDD6A  DELI-cious CLI POS - ORDER FRESH! \uD83E\uDD64                        |\n" +
                         " |                                                                          |\n" +
                         " ----------------------------------------------------------------------------\n" + AnsiColors.RESET);
 

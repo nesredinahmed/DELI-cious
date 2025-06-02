@@ -1,0 +1,20 @@
+DELI-cious Order Receipt
+-------------------------
+Order Date: 2025-05-30 14:00:45
+-------------------------
+
+--- Current Order Details ---
+Item 1:
+  4" Sandwich on white bread (Base: $5.50)
+    Regular Toppings (Included): au jus
+    Toasted: No
+  Sandwich Total: $5.50
+
+Item 2:
+Small Coke - $2.00
+-----------------------------
+Total Order Cost: $7.50
+
+-------------------------
+Total Order Cost: $7.50
+-------------------------
